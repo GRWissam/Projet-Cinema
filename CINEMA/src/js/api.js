@@ -1,7 +1,7 @@
 const API_KEY = "200102d"; 
 const URL_BASE = "https://www.omdbapi.com/";
 
-export const rechercherFilms = async (recherche, page = 1) => {
+export const rechercherFilms = async (recherche, page=1) => {
   try {
     const url = `${URL_BASE}?apikey=${API_KEY}&s=${recherche}&page=${page}`;
     
