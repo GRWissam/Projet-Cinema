@@ -1,6 +1,7 @@
 import { rechercherFilms } from "./api.js";
 
 const conteneurFilms = document.getElementById("movies-container");
+const bouton2024 = document.getElementById("btn-2024");
 
 const creerCarteFilm = (film) => {
   const carte = document.createElement("div");
@@ -37,3 +38,22 @@ if (listeFilms.length > 0) {
 };
 
 initialiserPage();
+
+if(bouton2024){
+    bouton2024.addEventListener("click", async () => {
+        bouton2024.innerText = "Chargement...";
+        const films2024 = await rechercherFilms("2024");
+
+        if(films2024.length > 0){
+             films2024.forEach((film) => {
+                if(film.Year.includes("2024")){
+                    const carte = creerCarteFilm(film);
+                    conteneurFilms.appendChild(carte);
+                }
+             });
+             bouton2024.style.display = "none";
+        } else {
+            bouton2024.innerText = "Pas de films trouvés";
+        }
+    });
+}
