@@ -3,12 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="search.css">
     <title>Recherche</title>
   </head>
   <body>
     <nav>
-        <a href="index.html">Accueil</a> | 
-        <a href="search.html">Recherche</a>
+      <div class="logo">
+        <a href="index.html">
+          <span>LEMPADA</span>
+          <img src="img/logo.svg" alt="Logo">
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">ACCUEIL</a>
+        <a href="search.html" class="active">RECHERCHE</a>
+      </div>
     </nav>
     <h1>Rechercher un film</h1>
     <input type="text" id="search-input" placeholder="Tapez un titre...">
@@ -16,6 +25,15 @@
     <button id="btn-charger-plus" style="display:none; margin: 20px 0; padding: 10px; cursor: pointer;">
         Charger la suite...
     </button>
+<footer>
+        <div class="footer">
+            <p>2025 Cinéma Village Lempada - Tous droits réservés</p>
+            <div class="sociaux">
+                <a href="#">Instagram</a> | <a href="#">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
     <script type="module" src="/src/js/search.js"></script>
   </body>
 </html>
