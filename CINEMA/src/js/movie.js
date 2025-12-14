@@ -16,10 +16,10 @@ async function chargerInfos(){
     }
 
     let leFilm = await recupererDetailsFilm(monId);
-
+    const ImagePasLa = "https://placehold.co/300x450/F3F3E8/2E51BB?text=Pas+d%27image";
     let imageFinale="";
     if(leFilm === null || leFilm.Poster==="N/A"){
-        imageFinale="https://placehold.co/300x450?text=Pas+d'image";
+        imageFinale =ImagePasLa;
     }else{
         imageFinale=leFilm.Poster;
     }
@@ -28,7 +28,7 @@ async function chargerInfos(){
         zoneFilm.innerHTML=`
             <h1>${leFilm.Title}</h1>
             <div style="display:flex; flex-wrap:wrap;">
-                <img src="${imageFinale}" style="max-width:300px; margin-right:20px; border-radius:10px;">
+                <img src="${imageFinale}" style="max-width:300px; margin-right:20px; border-radius:10px;"onerror="this.onerror=null; this.src='${ImagePasLa}';">
                 <div style="max-width:600px;">
                     <p><strong>Date :</strong> ${leFilm.Year}</p>
                     <p><strong>Genre :</strong> ${leFilm.Genre}</p>
