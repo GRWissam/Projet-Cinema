@@ -12,14 +12,15 @@ function afficherUnFilm(leFilm){
     let divFilm=document.createElement("div");
     divFilm.classList.add("movie-card");
     
+    const ImagePasLa = "https://placehold.co/200x300/transparent/2E51BB?text=Pas+d%27image";
     let monImage="";
     if(leFilm.Poster==="N/A"){
-        monImage="https://placehold.co/200x300?text=Pas+d'image";
+        monImage= ImagePasLa;
     }else{
         monImage=leFilm.Poster;
     }
     divFilm.innerHTML=`
-        <img src="${monImage}" style="width: 100%; border-radius: 10px;">
+        <img src="${monImage}" style="width: 100%; border-radius: 10px;"onerror="this.onerror=null; this.src='${ImagePasLa}';">
         <h3>${leFilm.Title}</h3>
         <p>${leFilm.Year}</p>
         <a href="movie.html?id=${leFilm.imdbID}">Voir infos</a>
