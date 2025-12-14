@@ -45,12 +45,14 @@ if(bouton2024){
         const films2024 = await rechercherFilms("2024");
 
         if(films2024.length > 0){
-             films2024.forEach((film) => {
-                if(film.Year.includes("2024")){
-                    const carte = creerCarteFilm(film);
-                    conteneurFilms.appendChild(carte);
-                }
+             const filmsFiltres = films2024.filter(film => film.Year.includes("2024"));
+             const selectionLimitee = filmsFiltres.slice(0, 4);
+
+             selectionLimitee.forEach((film) => {
+                const carte = creerCarteFilm(film);
+                conteneurFilms.appendChild(carte);
              });
+             
              bouton2024.style.display = "none";
         } else {
             bouton2024.innerText = "Pas de films trouvés";
