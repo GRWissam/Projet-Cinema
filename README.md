@@ -6,6 +6,7 @@ Une application web interactive pour explorer l'univers du cinéma, réalisée e
 Ce projet a été réalisé pour pratiquer les bases du développement Web Front-end. L'objectif était de créer une interface dynamique capable d'afficher des films et de gérer des interactions utilisateurs sans framework complexe.
 
 ## 🛠️ Technologies Utilisées
+- **Environnement** : Node.js avec **Vite** pour un serveur de développement ultra-rapide.
 - **HTML5** : Structure sémantique de l'application.
 - **CSS3** : Design responsive et animations (Flexbox/Grid).
 - **JavaScript (Vanilla)** : Manipulation du DOM, gestion des événements et logique de filtrage.
